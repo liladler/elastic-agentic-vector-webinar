@@ -41,6 +41,13 @@ This demo implements an intelligent search agent that combines text search with 
   - `SearchTool`: Hybrid search returning text + image paths
   - `ImageAnalysisTool`: Returns verified image paths for the Vision LLM
 
+## Requirements
+
+- **Python**: 3.11+ (3.11.10 recommended for demo app)
+- **pyenv**: (optional but recommended) For managing Python versions
+- **Elasticsearch**: Serverless project (trial license applicable)
+- **OpenAI API**: Access to vision-capable models (e.g., gpt-4o, gpt-4.1)
+
 ## Environment Variables
 
 Create a `.env` file with:
@@ -63,6 +70,18 @@ OPENAI_MODEL_NAME=gpt-4.1  # Must be vision-capable
 2. Run the notebook:
    ```bash
    jupyter notebook elastic_crewai_demo.ipynb
+   ```
+
+3. (Optional) Run the demo app: 
+   ```bash
+   pyenv install -s 3.11.10
+   pyenv local 3.11.10
+
+   python -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+
+   streamlit run demo_app.py
    ```
 
 ## Architecture
@@ -118,3 +137,9 @@ OPENAI_MODEL_NAME=gpt-4.1  # Must be vision-capable
 - **ColPali** pre-filters thousands of images efficiently using multi-vector embeddings
 - **Vision LLM** analyzes the filtered results, extracting insights from diagrams and charts
 - **CrewAI** orchestrates the unified workflow with `multimodal=True` 
+
+![Image](images/slide_006.png)
+
+![Image](images/demo-app1.png)
+
+![Image](images/demo-app2.png)
