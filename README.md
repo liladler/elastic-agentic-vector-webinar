@@ -2,7 +2,7 @@
 
 This demo implements an intelligent search agent that combines text search with visual analysis of technical documentation using CrewAI's multimodal capabilities.
 
-## Architecture Overview
+## Overview
 
 ### Data Flow
 
